@@ -1,3 +1,4 @@
+import AddMovieReviewPage from './pages/addMovieReviewPage';
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
@@ -6,7 +7,6 @@ import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage';
 import FavoriteMoviesPage from './pages/favoriteMoviesPage';
 import MovieReviewPage from "./pages/movieReviewPage";
-import AddMovieReviewPage from './pages/addMovieReviewPage';
 import SiteHeader from './components/siteHeader';
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
