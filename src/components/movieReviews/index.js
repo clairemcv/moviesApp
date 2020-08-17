@@ -7,10 +7,10 @@ export default ({ movie }) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    getMovieReviews(movie.id).then(reviews => {
+    getMovieReviews(movie.id).then((reviews) => {
       setReviews(reviews);
     });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <table className="table table-striped table-bordered table-hover">
@@ -22,28 +22,28 @@ export default ({ movie }) => {
         </tr>
       </thead>
       <tbody>
-        {reviews.map(r => {
-            return (
-              <tr key={r.id}>
-                <td>{r.author}</td>
-                <td>{excerpt(r.content)}</td>
-                <td>
-                  {" "}
-                  <Link
-                    to={{
-                      pathname: `/reviews/${r.id}`,
-                      state: {
-                        review: r,
-                        movie: movie
-                      }
-                    }}
-                  >
-                    Full Review
-                  </Link>
-                </td>
-              </tr>
-            );
-          })}
+        {reviews.map((r) => {
+          return (
+            <tr key={r.id}>
+              <td>{r.author}</td>
+              <td>{excerpt(r.content)}</td>
+              <td>
+                {" "}
+                <Link
+                  to={{
+                    pathname: `/reviews/${r.id}`,
+                    state: {
+                      review: r,
+                      movie: movie,
+                    },
+                  }}
+                >
+                  Full Review
+                </Link>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

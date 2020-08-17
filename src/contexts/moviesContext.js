@@ -12,15 +12,15 @@ const reducer = (state, action) => {
       };
     case "load-movies":
       return { movies: [...action.payload.movies], favorites: [] };
-      case "add-review":
-        return {
-          movies: [...state.movies],
-          favorites: [
-            ...state.favorites.filter((m) => m.id !== action.payload.movie.id),
-            { ...action.payload.movie, review: action.payload.review },
-          ],
-        };
-      
+    case "add-review":
+      return {
+        movies: [...state.movies],
+        favorites: [
+          ...state.favorites.filter((m) => m.id !== action.payload.movie.id),
+          { ...action.payload.movie, review: action.payload.review },
+        ],
+      };
+
     default:
       return state;
   }
@@ -36,13 +36,13 @@ const MoviesContextProvider = (props) => {
 
   const addReview = (movie, review) => {
     dispatch({ type: "add-review", payload: { movie, review } });
-  }; 
+  };
 
   useEffect(() => {
     getMovies().then((movies) => {
       dispatch({ type: "load-movies", payload: { movies } });
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <MoviesContext.Provider

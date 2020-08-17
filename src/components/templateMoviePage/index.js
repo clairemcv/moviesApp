@@ -1,5 +1,5 @@
 import React from "react";
-import MovieHeader from '../headerMovie'
+import MovieHeader from "../headerMovie";
 import "./moviePage.css";
 
 const TemplateMoviePage = ({ movie, children }) => {

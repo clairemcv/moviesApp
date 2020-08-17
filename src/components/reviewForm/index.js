@@ -1,15 +1,15 @@
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import "./reviewForm.css";
 import useForm from "react-hook-form";
-import {MoviesContext} from '../../contexts/moviesContext'
+import { MoviesContext } from "../../contexts/moviesContext";
 import { withRouter } from "react-router-dom";
 
 const ReviewForm = ({ movie, history }) => {
   const { register, handleSubmit, errors, reset } = useForm();
   const context = useContext(MoviesContext);
 
-  const onSubmit = data => {
-    context.addReview(movie, data)
+  const onSubmit = (data) => {
+    context.addReview(movie, data);
     history.push("/movies/favorites");
   };
 
@@ -37,7 +37,7 @@ const ReviewForm = ({ movie, history }) => {
           name="content"
           ref={register({
             required: "No review text",
-            minLength: { value: 10, message: "Review is too short" }
+            minLength: { value: 10, message: "Review is too short" },
           })}
         />
       </div>
@@ -54,7 +54,7 @@ const ReviewForm = ({ movie, history }) => {
         onClick={() => {
           reset({
             author: "",
-            content: ""
+            content: "",
           });
         }}
       >

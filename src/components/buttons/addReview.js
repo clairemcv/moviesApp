@@ -8,8 +8,8 @@ const ReviewButton = ({ movie }) => {
       to={{
         pathname: `/reviews/form`,
         state: {
-          movie: movie
-        }
+          movie: movie,
+        },
       }}
     >
       Write a Review
