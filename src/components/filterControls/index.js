@@ -15,6 +15,7 @@ const FilterControls = (props) => {
   const handleGenreChange = (e) => {
     handleChange(e, "genre", e.target.value);
   };
+ 
 
   return (
     <div className="row bg-warning">

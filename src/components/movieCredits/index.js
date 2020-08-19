@@ -1,49 +1,61 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getMovieReviews } from "../../api/tmdb-api";
-import { excerpt } from "../../util";
+import React from "react";
+import "./movieCredits.css";
+
 
 export default ({ movie }) => {
-  const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    getMovieReviews(movie.id).then(reviews => {
-      setReviews(reviews);
-    });
-  }, []);
   return (
-    <table className="table table-striped table-bordered table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Author</th>
-          <th scope="col">Excerpt</th>
-          <th scope="col">More</th>
-        </tr>
-      </thead>
-      <tbody>
-        {reviews.map(r => {
-            return (
-              <tr key={r.id}>
-                <td>{r.author}</td>
-                <td>{excerpt(r.content)}</td>
-                <td>
-                  {" "}
-                  <Link
-                    to={{
-                      pathname: `/reviews/${r.id}`,
-                      state: {
-                        review: r,
-                        movie: movie
-                      }
-                    }}
-                  >
-                    Full Review
-                  </Link>
-                </td>
-              </tr>
-            );
-          })}
-      </tbody>
-    </table>
+    <>
+      <h4> NEW Credits </h4> <p> {movie.overview} </p>{" "}
+      <ul className="list-group list-group-horizontal">
+        <li key="ruh" className="list-group-item list-group-item-dark">
+          Runtime(min.){" "}
+        </li>{" "}
+        <li key="rut" className="list-group-item ">
+          {" "}
+          {movie.runtime}{" "}
+        </li>{" "}
+        <li key="rdh" className="list-group-item list-group-item-dark">
+          Release Date{" "}
+        </li>{" "}
+        <li key="rdv" className="list-group-item ">
+          {" "}
+          {movie.release_date}{" "}
+        </li>{" "}
+      </ul>
+      <ul className="list-group list-group-horizontal">
+        <li key="ct" className="list-group-item list-group-item-dark">
+          Cast{" "}
+        </li>{" "}
+        {movie.spoken_languages.map((lang) => (
+          <li key={lang.name} className="list-group-item">
+            {" "}
+            {lang.name}{" "}
+          </li>
+        ))}{" "}
+      </ul>{" "}
+      <ul className="list-group list-group-horizontal">
+        <li key="pch" className="list-group-item list-group-item-dark">
+          Production Companies{" "}
+        </li>{" "}
+        {movie.production_companies.map((pc) => (
+          <li key={pc.name} className="list-group-item">
+            {" "}
+            {pc.name}{" "}
+          </li>
+        ))}{" "}
+      </ul>{" "}
+      <ul className="list-group list-group-horizontal">
+        <li key="pct" className="list-group-item list-group-item-dark">
+          Production Countries{" "}
+        </li>{" "}
+        {movie.production_countries.map((pct) => (
+          <li key={pct.name} className="list-group-item">
+            {" "}
+            {pct.name}{" "}
+          </li>
+        ))}{" "}
+      </ul>{" "}
+    </>
   );
 };
+

@@ -6,6 +6,7 @@ import FilterControls from "../src/components/filterControls";
 import MoviesHeader from "../src/components/headerMovieList";
 import MovieList from "../src/components/movieList";
 import MovieDetails from "../src/components/movieDetails";
+import MovieCredits from "../src/components/movieCredits";
 import MovieHeader from "../src/components/headerMovie";
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
@@ -77,6 +78,30 @@ const sample = {
     }
   ],
   release_date: "2017-12-13",
+  cast: [
+    {
+      name: "Mark Hamill",
+      character: "Luke Skywalker"
+    },
+    {
+      name: "Carrie Fisher",
+      character: "Leia Organa"
+    },
+    {
+      name: "Adam Driver",
+      character: "Kylo Ren"
+    },
+    {
+      name: "Daisy Ridley",
+      character: "Rey"
+    },
+  ],
+  crew: [
+    {
+      department:"Music",
+      name: "John Williams"
+    }
+  ],
   revenue: 1332459537,
   runtime: 152,
   spoken_languages: [
@@ -145,6 +170,10 @@ storiesOf("Home Page/MovieList", module)
 
 storiesOf("Movie Details Page/MovieDetails", module).add("default", () => (
   <MovieDetails movie={sample} />
+));
+
+storiesOf("Movie Credits Page/MovieCredits", module).add("default", () => (
+  <MovieCredits movie={sample} />
 ));
 
 storiesOf("Movie Details Page/MovieHeader", module)
