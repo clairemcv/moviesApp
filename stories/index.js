@@ -78,6 +78,23 @@ const sample = {
     }
   ],
   release_date: "2017-12-13",
+  revenue: 1332459537,
+  runtime: 152,
+  spoken_languages: [
+    {
+      iso_639_1: "en",
+      name: "English"
+    }
+  ],
+  status: "Released",
+  tagline: "Darkness rises... and light to meet it",
+  title: "Star Wars: The Last Jedi",
+  video: false,
+  vote_average: 7,
+  vote_count: 9692
+};
+
+const credits = {
   cast: [
     {
       name: "Mark Hamill",
@@ -102,20 +119,6 @@ const sample = {
       name: "John Williams"
     }
   ],
-  revenue: 1332459537,
-  runtime: 152,
-  spoken_languages: [
-    {
-      iso_639_1: "en",
-      name: "English"
-    }
-  ],
-  status: "Released",
-  tagline: "Darkness rises... and light to meet it",
-  title: "Star Wars: The Last Jedi",
-  video: false,
-  vote_average: 7,
-  vote_count: 9692
 };
 
 storiesOf("Home Page/MovieCard", module)
@@ -149,7 +152,7 @@ storiesOf("Home Page/FilterControls", module)
   ));
 
 storiesOf("Home Page/Header", module).add("default", () => (
-  <MoviesHeader title="All Movies" numMovies={10} />
+  <MoviesHeader title="All Movies" numMovies={20} />
 ));
 
 storiesOf("Home Page/MovieList", module)
@@ -173,7 +176,7 @@ storiesOf("Movie Details Page/MovieDetails", module).add("default", () => (
 ));
 
 storiesOf("Movie Credits Page/MovieCredits", module).add("default", () => (
-  <MovieCredits movie={sample} />
+  <MovieCredits movie={credits} />
 ));
 
 storiesOf("Movie Details Page/MovieHeader", module)
