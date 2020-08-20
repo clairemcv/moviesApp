@@ -1,36 +1,34 @@
-import React from "react";
 import "./movieCredits.css";
+import React, { useEffect, useState } from "react";
+import { getMovieCredits } from "../../api/tmdb-api";
 
 
 export default ({ movie }) => {
-  return (
-    <>
-      <h4> NEW Credits </h4> 
-      <ul className="list-group list-group-horizontal">
+  const [credits, setCredits] = useState([]);
+
+  useEffect(() => {
+    getMovieCredits(movie.id).then((credits) => {
+      setCredits(credits);
+      console.log("credits: ", credits);
+});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
+return (
+  <>
+  <h4> NEW Credits </h4> 
+  <ul className="list-group list-group-horizontal">
         <li key="ct" className="list-group-item list-group-item-dark">
           Cast{" "}
         </li>{" "}
-        {movie.cast.map((ct) => (
-          <li key={ct.name} className="list-group-item">
+        {credits.cast.map((ct) => (
+          <li key={ct.character} className="list-group-item">
             {" "}
-            {ct.name}{" "}
+            {ct.character}{" "}
           </li>
         ))}{" "}
       </ul>{" "}
-      
-      <ul className="list-group list-group-horizontal">
-        <li key="c" className="list-group-item list-group-item-dark">
-          Crew{" "}
-        </li>{" "}
-        {movie.crew.map((c) => (
-          <li key={c.name} className="list-group-item">
-            {" "}
-            {c.name}{" "}
-          </li>
-        ))}{" "}
-      </ul>{" "}
-  
-    </>
-  );
-};
+
+ 
+</>
+)};
 
