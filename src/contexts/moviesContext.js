@@ -9,6 +9,7 @@ const reducer = (state, action) => {
       return {
         movies: state.movies.filter((m) => m.id !== action.payload.movie.id),
         favorites: [...state.favorites, action.payload.movie],
+        
       };
     case "load-movies":
       return { movies: [...action.payload.movies], favorites: [] };

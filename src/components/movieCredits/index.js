@@ -13,22 +13,29 @@ export default ({ movie }) => {
 });
   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
-return (
-  <>
-  <h4> NEW Credits </h4> 
-  <ul className="list-group list-group-horizontal">
-        <li key="ct" className="list-group-item list-group-item-dark">
-          Cast{" "}
-        </li>{" "}
-        {credits.cast.map((ct) => (
-          <li key={ct.character} className="list-group-item">
-            {" "}
-            {ct.character}{" "}
-          </li>
-        ))}{" "}
-      </ul>{" "}
+  return (
+    <table className="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Cast</th>
+        <th scope="col">Character</th>
+      </tr>
+    </thead>
+    <tbody>
+      {credits.cast.map((cast) => {
+        return (
+          <tr key={cast.name}>
+            <td>{cast.name}</td>
+            <td>{cast.character}</td>
+          </tr>
+        );
+      })}
 
- 
-</>
-)};
+      
+    </tbody>
+  </table>
+  );
+  };
+  
+
 

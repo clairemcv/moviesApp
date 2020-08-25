@@ -4,7 +4,9 @@ export const getMovies = () => {
     )
     .then((res) => res.json())
     .then((json) => json.results);
+    
 };
+
 
 export const getMovie = (id) => {
   return fetch(
@@ -30,10 +32,19 @@ export const getMovieReviews = (id) => {
     .then((json) => json.results);
 };
 
-export const getMovieCredits = (id) => {
+
+export const getMovieCredits = async (id) => {
+  const fetchResponse = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  );
+  const res = await fetchResponse.json();
+  return res;
+};
+
+export const getUpcomingMovies = (id) => {
   return fetch(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      `https://api.themoviedb.org/3/movie/${id}/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )
-    .then(res => res.json())
-    .then(json => json.results);
+    .then((res) => res.json())
+    .then((json) => json.results);
 };

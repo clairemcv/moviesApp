@@ -95,6 +95,7 @@ const sample = {
 };
 
 const credits = {
+  id: 181808,
   cast: [
     {
       name: "Mark Hamill",
@@ -176,7 +177,7 @@ storiesOf("Movie Details Page/MovieDetails", module).add("default", () => (
 ));
 
 storiesOf("Movie Credits Page/MovieCredits", module).add("default", () => (
-  <MovieCredits movie={credits} />
+  <MovieCredits movie={sample} />
 ));
 
 storiesOf("Movie Details Page/MovieHeader", module)
