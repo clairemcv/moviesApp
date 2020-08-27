@@ -48,8 +48,10 @@ export const getSimilar = async (id) => {
     `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}`
   );
   const res = await fetchResponse.json();
-  return res;
+  const json = res.similar;
+  return json;
 };
+
 
 
 

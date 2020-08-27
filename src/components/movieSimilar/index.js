@@ -12,32 +12,27 @@ export default ({ movie }) => {
 });
   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [],);
-
 return (
-        <>
-          <h4> Overview </h4> <p> {similar.overview} </p>{" "}
-          <ul className="list-group list-group-horizontal">
-          <li key="tit" className="list-group-item list-group-item-dark">
-              Title{" "}
-            </li>{" "}
-            <li key="titl" className="list-group-item ">
-              {" "}
-              {similar.title}{" "}
-            </li>{" "}
-          </ul>
-          <ul className="list-group list-group-horizontal">
-            <li key="rdh" className="list-group-item list-group-item-dark">
-              Release Date{" "}
-            </li>{" "}
-            <li key="rdv" className="list-group-item ">
-              {" "}
-              {similar.release_date}{" "}
-            </li>{" "}
-          </ul>
-         
-        </>
-      );
-    };
-    
 
-
+    <table className="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Character</th>
+        </tr>
+      </thead>
+      <tbody>
+        {similar.map(s => {
+            return (
+              <tr key={s.title}>
+                <td>{s.title}</td>
+                <td>{s.release_date}</td> 
+                
+              </tr>
+            );
+          })}
+      </tbody>
+    </table>
+  );
+        };
+  

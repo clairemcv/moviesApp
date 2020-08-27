@@ -7,6 +7,7 @@ import MoviesHeader from "../src/components/headerMovieList";
 import MovieList from "../src/components/movieList";
 import MovieDetails from "../src/components/movieDetails";
 import MovieCredits from "../src/components/movieCredits";
+import MovieSimilar from "../src/components/movieSimilar";
 import MovieHeader from "../src/components/headerMovie";
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
@@ -179,9 +180,6 @@ const credits = {
 };
 
 const similar = {
-  id: 181808,
-  results: [
-  {
     id: 1891,
     video: false,
     vote_count: 11917,
@@ -191,59 +189,17 @@ const similar = {
     original_language: "en",
     original_title: "The Empire Strikes Back",
     genre_ids: [
-    28,
-    12,
-    878
-    ],
+       28,
+       12,
+       878
+      ],
     backdrop_path: "/azIbQpeKKNF9r85lBSRrNnMK0Si.jpg",
     adult: false,
     overview: "The epic saga continues as Luke Skywalker, in hopes of defeating the evil Galactic Empire, learns the ways of the Jedi from aging master Yoda. But Darth Vader is more determined than ever to capture Luke. Meanwhile, rebel leader Princess Leia, cocky Han Solo, Chewbacca, and droids C-3PO and R2-D2 are thrown into various stages of capture, betrayal and despair.",
     poster_path: "/7BuH8itoSrLExs2YZSsM01Qk2no.jpg",
     popularity: 33.751
-    },
-    {
-    id: 1892,
-    video: false,
-    vote_count: 10088,
-    vote_average: 8,
-    title: "Return of the Jedi",
-    release_date: "1983-05-25",
-    original_language: "en",
-    original_title: "Return of the Jedi",
-    genre_ids: [
-    28,
-    12,
-    878
-    ],
-    backdrop_path: "/iP2tEA2A77qhbhRfcFkiD6WFOqH.jpg",
-    adult: false,
-    overview: "Luke Skywalker leads a mission to rescue his friend Han Solo from the clutches of Jabba the Hutt, while the Emperor seeks to destroy the Rebellion once and for all with a second dreaded Death Star.",
-    poster_path: "/mDCBQNhR6R0PVFucJl0O4Hp5klZ.jpg",
-    popularity: 24.365
-    },
-    {
-    id: 140607,
-    video: false,
-    vote_count: 14839,
-    vote_average: 7.4,
-    title: "Star Wars: The Force Awakens",
-    release_date: "2015-12-15",
-    original_language: "en",
-    original_title: "Star Wars: The Force Awakens",
-    genre_ids: [
-    28,
-    12,
-    14,
-    878
-    ],
-    backdrop_path: "/k6EOrckWFuz7I4z4wiRwz8zsj4H.jpg",
-    adult: false,
-    overview: "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.",
-    poster_path: "/wqnLdwVXoBjKibFRR5U3y0aDUhs.jpg",
-    popularity: 42.57
-    },
-  ],
-};
+    };
+
 
 storiesOf("Home Page/MovieCard", module)
   .addDecorator(story => (
@@ -277,7 +233,7 @@ storiesOf("Home Page/FilterControls", module)
   ));
 
 storiesOf("Home Page/Header", module).add("default", () => (
-  <MoviesHeader title="All Movies" numMovies={20} />
+  <MoviesHeader title="All Movies" numMovies={40} />
 ));
 
 storiesOf("Home Page/MovieList", module)
@@ -303,8 +259,12 @@ storiesOf("Movie Details Page/MovieDetails", module).add("default", () => (
   <MovieDetails movie={sample} />
 ));
 
-storiesOf("Movie Credits Page/MovieCredits", module).add("default", () => (
+storiesOf("Movie Details Page/MovieCredits", module).add("default", () => (
   <MovieCredits movie={sample} />
+));
+
+storiesOf("Movie Details Page/MovieSimilar", module).add("default", () => (
+  <MovieSimilar movie={sample} />
 ));
 
 storiesOf("Movie Details Page/MovieHeader", module)
