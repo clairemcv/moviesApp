@@ -18,16 +18,17 @@ export default ({ movie }) => {
     <table className="table table-striped table-bordered table-hover">
       <thead>
         <tr>
+          <th scope="col">Actor</th>
           <th scope="col">Character</th>
-          <th scope="col">Name</th>
         </tr>
       </thead>
       <tbody>
         {cast.map(c => {
             return (
               <tr key={c.cast_id}>
-                <td>{c.character}</td> 
                 <td>{c.name}</td>
+                <td>{c.character}</td> 
+                
               </tr>
             );
           })}

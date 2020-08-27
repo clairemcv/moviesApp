@@ -43,10 +43,20 @@ export const getCast = async (id) => {
 };
 
 
-export const getUpcomingMovies = () => {
-  return fetch(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-    .then((res) => res.json())
-    .then((json) => json.upcoming);
+export const getSimilar = async (id) => {
+  const fetchResponse = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  );
+  const res = await fetchResponse.json();
+  return res;
 };
+
+
+
+export const getUpcomingMovies = async (id) => {
+  const fetchResponse = await fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  );
+  const res = await fetchResponse.json();
+  return res;
+}
