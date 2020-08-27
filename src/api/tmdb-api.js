@@ -33,15 +33,17 @@ export const getMovieReviews = (id) => {
 };
 
 
-export const getMovieCredits = (id) => {
-  return fetch(
+export const getCast = async (id) => {
+  const fetchResponse = await fetch(
     `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}`
-  )
-  .then((res) => res.json())
-  .then((json) => json.results);
+  );
+  const res = await fetchResponse.json();
+  const json = res.cast;
+  return json;
 };
 
-export const getUpcomingMovies = (id) => {
+
+export const getUpcomingMovies = () => {
   return fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )

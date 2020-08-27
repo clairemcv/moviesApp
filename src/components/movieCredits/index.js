@@ -1,52 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getMovieCredits } from "../../api/tmdb-api";
-import { excerpt } from "../../util";
+import { getCast } from "../../api/tmdb-api";
+
 
 export default ({ movie }) => {
-  const [credits, setCredits] = useState([]);
+  const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    getMovieCredits(movie.id).then((credits) => {
-      setCredits(credits);
-      console.log("credits: ", credits);
+    getCast(movie.id).then((cast) => {
+      setCast(cast);
+     
 });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+}, [],);
+
 
   return (
     <table className="table table-striped table-bordered table-hover">
       <thead>
         <tr>
-          <th scope="col">Actor</th>
           <th scope="col">Character</th>
-          <th scope="col">More</th>
+          <th scope="col">Name</th>
         </tr>
       </thead>
       <tbody>
-        {credits.cast.map(c => {
+        {cast.map(c => {
             return (
-              <tr key={c.id}>
+              <tr key={c.cast_id}>
+                <td>{c.character}</td> 
                 <td>{c.name}</td>
-                <td>{excerpt(c.character)}</td>
-                <td>
-                  {" "}
-                  <Link
-                    to={{
-                      pathname: `/credits/${c.id}`,
-                      state: {
-                        credits: c,
-                        movie: movie
-                      }
-                    }}
-                  >
-                    Full 
-                  </Link>
-                </td>
               </tr>
             );
           })}
       </tbody>
     </table>
   );
+
+
 };
+
