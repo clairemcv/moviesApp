@@ -20,11 +20,30 @@ Name: Claire McVeigh
 
 ## API Data Model.
 
-..... [For projects that did not expand the Movies Fan app] Insert a diagram of API's data model (see example below) AND/OR a sample(s) of the JSON documents returned by its endpoints ........
+Specify the additional TMDB endpoints used and show sample responses, in JSON 
+Upcoming endpoint: https://api.themoviedb.org/3/movie/upcoming?api_key=afcb6bf3ef6b91fcf5cad6bfe725e104
+Sample below;
+results: [
+{
+popularity: 275.087,
+vote_count: 187,
+video: false,
+poster_path: "/k68nPLbIST6NP96JmTxmZijEvCA.jpg",
+id: 577922,
+adult: false,
+backdrop_path: "/wzJRB4MKi3yK138bJyuL9nx47y6.jpg",
+original_language: "en",
+original_title: "Tenet",
+genre_ids: [
+28,
+53
+],
+title: "Tenet",
+vote_average: 7.7,
+overview: "Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+release_date: "2020-08-22"
+},
 
-![][model]
-
-......[For projects that expanded the Movies Fan app] Specify the additional TMDB endpoints used and show sample responses, in JSON .........
 
 ## App Design.
 
