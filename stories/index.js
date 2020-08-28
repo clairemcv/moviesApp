@@ -13,6 +13,7 @@ import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
+import UpcomingMovies from "../src/components/upcomingMovies";
 
 const sample = {
   adult: false,
@@ -200,6 +201,25 @@ const similar = {
     popularity: 33.751
     };
 
+    const upcoming = {
+      popularity: 275.087,
+      vote_count: 187,
+      video: false,
+      poster_path: "/k68nPLbIST6NP96JmTxmZijEvCA.jpg",
+      id: 577922,
+      adult: false,
+      backdrop_path: "/wzJRB4MKi3yK138bJyuL9nx47y6.jpg",
+      original_language: "en",
+      original_title: "Tenet",
+      genre_ids: [
+      28,
+      53
+      ],
+      title: "Tenet",
+      vote_average: 7.7,
+      overview: "Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+      release_date: "2020-08-22"
+      };
 
 storiesOf("Home Page/MovieCard", module)
   .addDecorator(story => (
@@ -248,6 +268,7 @@ storiesOf("Home Page/MovieList", module)
         movies={movies}
         credits={credits}
         similar={similar}
+        upcoming={upcoming}
         action={movie => (
           <button className="btn w-100 btn-primary">Test</button>
         )}
@@ -265,6 +286,10 @@ storiesOf("Movie Details Page/MovieCredits", module).add("default", () => (
 
 storiesOf("Movie Details Page/MovieSimilar", module).add("default", () => (
   <MovieSimilar movie={sample} />
+));
+
+storiesOf("Movie Details Page/UpcomingMovies", module).add("default", () => (
+  <UpcomingMovies movie={sample} />
 ));
 
 storiesOf("Movie Details Page/MovieHeader", module)
