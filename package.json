@@ -12,6 +12,7 @@
     "bootstrap": "^4.3.1",
     "dotenv": "^8.2.0",
     "kill-port": "^1.6.0",
+    "polished": "^3.6.5",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-hook-form": "^3.29.4",
