@@ -3,24 +3,21 @@
 Name: Claire McVeigh
 
 ## Overview.
-...... Insert a statement of the app concept and objectives. For an expansion of the Movies Fan app, only state the additional objectives .........
 
+To fulfill the good band objectives for the Movies App and aim for some excellent ones if time allowed. 
 
-...... Insert a bullet-point list of user features. For extension to the Movies Fan app, only list new/modified features)...... 
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + Upcoming Movies
+ + Similar Movies - on Movie Details page
+ + Cast credits for Movie - on Movie Details page
 
 ## Setup requirements.
-
-...... Insert a brief explanation (to a third party) of any non-standard setup steps necessary to run your app/client locally (after cloning the repo) ........
+No non standard necessary - npm start
 
 ## API Data Model.
 
-Specify the additional TMDB endpoints used and show sample responses, in JSON 
+Q. Specify the additional TMDB endpoints used and show sample responses, in JSON:
+
 Upcoming endpoint: https://api.themoviedb.org/3/movie/upcoming?api_key=afcb6bf3ef6b91fcf5cad6bfe725e104
 Sample below;
 results: [
@@ -44,49 +41,78 @@ overview: "Armed with only one word - Tenet - and fighting for the survival of t
 release_date: "2020-08-22"
 },
 
+Credits endpoint; https://api.themoviedb.org/3/movie/539885/credits?api_key=afcb6bf3ef6b91fcf5cad6bfe725e104
+
+Sample
+[
+{
+cast_id: 0,
+character: "Ava",
+credit_id: "5b62972fc3a36818880284ad",
+gender: 1,
+id: 83002,
+name: "Jessica Chastain",
+order: 0,
+profile_path: "/ArD58MbiD6jpLTcc64ngbB9dKbv.jpg"
+},
+
+Similar endpoint; https://api.themoviedb.org/3/movie/577922/similar?api_key=afcb6bf3ef6b91fcf5cad6bfe725e104
+
+Sample
+results: [
+{
+id: 2502,
+video: false,
+vote_count: 5252,
+vote_average: 7.3,
+title: "The Bourne Supremacy",
+release_date: "2004-07-23",
+original_language: "en",
+original_title: "The Bourne Supremacy",
+genre_ids: [
+28,
+18,
+53
+],
+backdrop_path: "/fE7RqvVHbGHjBC9NjIjlLh2t4zK.jpg",
+adult: false,
+overview: "When a CIA operation to purchase classified Russian documents is blown by a rival agent, who then shows up in the sleepy seaside village where Bourne and Marie have been living. The pair run for their lives and Bourne, who promised retaliation should anyone from his former life attempt contact, is forced to once again take up his life as a trained assassin to survive.",
+poster_path: "/7IYGiDrquvX3q7e9PV6Pejs6b2g.jpg",
+popularity: 19.454
+},
 
 ## App Design.
 
 ### Component catalogue.
 
-....... Insert a screenshot from the Storybook UI showing your components' stories. [For projects that expanded the Movies app, hi-light stories relating to new/modified components - see example screenshot below] .......
+ [For projects that expanded the Movies app, hi-light stories relating to new/modified components - see example screenshot below] .......
 
-![][stories]
+![][upcomingMovies]
+![][similar]
+![][credits]
 
 ### UI Design.
 
-...... Insert screenshots of the app's views (see example below) with appropriate captions (For extension to the Movies Fan App, only show the new/modified views) ........
+![][Show Cast]
+>Shows detailed cast information on a movie. Clicking the 'Show Cast' button will display the full cast for the movie.
 
-![][view]
->Shows detailed information on a movie. Clicking the 'Show Reviews' button will display extracts from critic reviews.
+![][Show Similar]
+>Shows detailed cast information on a movie. Clicking the 'Show Similar' button will display a list of titles similar to the selected movie.
 
 ### Routing.
 
-...... Insert a list of the routes supported by your app and state the associated view. If relevant, specify which of the routes require authentication, i.e. protected/private. For projects that expanded the Movies Fan app, only new routes should be listed ......... 
 
-+ /blogs - displays all published blogs.
-+ /blogs/:id (private) - detail view of a particular blog.
-+ /blogs/:id/comments (private) - detail view of a particular blog and its comments.
-+ etc.
-+ etc.
++ /movies/upcoming - displays all upcoming movies
++ /movies/:id/credits - detail view of the cast of a particular movie.
++ /movies/:id/similar - detail view of the cast of a particular movie.
+
 
 ## React feature set.
 
 ..... Insert a bullet-point list of the React features used in your project, including one source code file references for each - see examples below ......
 
-+ useState and useEffect hooks - src/components/fileA.js
-+ useContext hook - src/components/fileb.js
-+ Extended Link - src/components/fileA.js
-+ Programmatic navigation - src/pages/fileC.js
-+ etc
-+ etc
-+ etc
-
-## Independent learning.
-
-. . . . . Briefly state the technologies/techniques used in your project codebase that were not covered in the lectures/labs. Provide source code filename references to support your assertions and include source material references (articles/blogs) ......... 
++ useState and useEffect hooks - src/components/movieCredits/index.js
++ Extended Link - src/components/movieSimilar/index.js
++ Programmatic navigation - src/pages/upcomingMoviesPage.js
 
 
-[model]: ./data.jpg
-[view]: ./view.png
-[stories]: ./storybook.png
