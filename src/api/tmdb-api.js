@@ -55,9 +55,9 @@ export const getSimilar = (id) => {
 
 
 export const getUpcomingMovies = async (id) => {
-  const fetchResponse = await fetch(
+  return fetch(
     `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}`
-  );
-  const res = await fetchResponse.json();
-  return res;
-}
+  )
+  .then((res) => res.json())
+  .then((json) => json.results);
+};

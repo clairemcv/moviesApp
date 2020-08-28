@@ -1,29 +1,72 @@
 import "./upcomingMovies.css";
-import React, { useEffect, useState } from "react";
-import MovieDetails from "../components/movieDetails";
-import PageTemplate from "../components/templateMoviePage";
-import { getUpcomingMovies } from "../../api/tmdb-api";
+import React from "react";
 
 
-const upcomingMovies = props => {
-  const { id } = props.match.params;
-  const [movie, setUpcomingMovies] = useState(null);
-  useEffect(() => {
-    getUpcomingMovies(id).then(movie => {
-      setUpcomingMovies(movie);
-    });
-  }, [id]);
+export default ({ movie }) => {
   return (
     <>
-      {movie ? (
-          <PageTemplate movie={movie}>
-            <MovieDetails movie={movie} />
-          </PageTemplate>
-      ) : (
-        <p>Waiting for movie details</p>
-      )}
+      <h4> Overview </h4> <p> {movie.overview} </p>{" "}
+      <ul className="list-group list-group-horizontal">
+        <li key="ruh" className="list-group-item list-group-item-dark">
+          Runtime(min.){" "}
+        </li>{" "}
+        <li key="rut" className="list-group-item ">
+          {" "}
+          {movie.runtime}{" "}
+        </li>{" "}
+        <li key="rdh" className="list-group-item list-group-item-dark">
+          Release Date{" "}
+        </li>{" "}
+        <li key="rdv" className="list-group-item ">
+          {" "}
+          {movie.release_date}{" "}
+        </li>{" "}
+      </ul>
+      <ul className="list-group list-group-horizontal">
+        <li key="gh" className="list-group-item list-group-item-dark">
+          Genres{" "}
+        </li>{" "}
+        {movie.genres.map((g) => (
+          <li key={g.name} className="list-group-item">
+            {" "}
+            {g.name}{" "}
+          </li>
+        ))}{" "}
+      </ul>{" "}
+      <ul className="list-group list-group-horizontal">
+        <li key="slh" className="list-group-item list-group-item-dark">
+          Spoken Languages{" "}
+        </li>{" "}
+        {movie.spoken_languages.map((lang) => (
+          <li key={lang.name} className="list-group-item">
+            {" "}
+            {lang.name}{" "}
+          </li>
+        ))}{" "}
+      </ul>{" "}
+      <ul className="list-group list-group-horizontal">
+        <li key="pch" className="list-group-item list-group-item-dark">
+          Production Companies{" "}
+        </li>{" "}
+        {movie.production_companies.map((pc) => (
+          <li key={pc.name} className="list-group-item">
+            {" "}
+            {pc.name}{" "}
+          </li>
+        ))}{" "}
+      </ul>{" "}
+      <ul className="list-group list-group-horizontal">
+        <li key="pct" className="list-group-item list-group-item-dark">
+          Production Countries{" "}
+        </li>{" "}
+        {movie.production_countries.map((pct) => (
+          <li key={pct.name} className="list-group-item">
+            {" "}
+            {pct.name}{" "}
+          </li>
+        ))}{" "}
+      </ul>{" "}
     </>
   );
 };
 
-export default upcomingMovies;
