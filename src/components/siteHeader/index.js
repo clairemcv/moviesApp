@@ -6,40 +6,40 @@ import "./siteHeader.css";
 
 const SiteHeader = () => {
   return (
-    <nav className="navbar  navbar-light fixed-top  bg-dark ">
-      <nav className="navbar-brand text-white">
-        <Link className=" text-white" to="/">
+    <nav className="navbar  navbar-light fixed-top  bg-white ">
+      <nav className="navbar-brand text-dark">
+        <Link className=" text-dark" to="/">
           TMDB Client
         </Link>
       </nav>
       <FontAwesomeIcon
-        className="navbar-text text-light"
+        className="navbar-text text-dark"
         icon={["fas", "video"]}
-        size="4x"
+        size="3x"
       />
-      <span className="navbar-text text-light">
+      <span className="navbar-text text-dark">
         For the movie aficionado
       </span>
       <FontAwesomeIcon
-        className="navbar-text text-light"
+        className="navbar-text text-dark"
         icon={["fas", "film"]}
-        size="4x"
+        size="3x"
       />
       <nav className="navbar navbar-expand ">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/">
-              Home
+            <Link className="nav-link text-dark" to="/">
+              Home <span role="img" aria-label = "emoji"> 🤓</span>
+            </Link> 
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-dark" to="/movies/favorites">
+              Favorites  <span role="img" aria-label = "emoji"> 🍿</span>
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/movies/favorites">
-              Favorites
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link text-white" to="/movies/upcoming">
-              Upcoming Movies
+            <Link className="nav-link text-dark" to="/movies/upcoming">
+              Upcoming Movies  <span role="img" aria-label = "emoji"> 🎬</span>
             </Link>
           </li>
         </ul>
