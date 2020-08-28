@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getSimilar } from "../../api/tmdb-api";
 
 
+
 export default ({ movie }) => {
   const [similar, setSimilar] = useState([]);
 
@@ -20,7 +21,7 @@ return (
     <tr>
       <th scope="col">Title</th>
       <th scope="col">Release Date</th>
-      <th scope="col">Poster</th>
+      <th scope="img">Poster</th>
     </tr>
   </thead>
   <tbody>
@@ -33,7 +34,7 @@ return (
       ? `https://image.tmdb.org/t/p/w500/${s.poster_path}`
       : "./film-poster-placeholder.png"
   }
-  className="movie"
+  className="similar"
   alt={s.title}
 /></td> 
             
