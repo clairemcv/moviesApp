@@ -43,13 +43,12 @@ export const getCast = async (id) => {
 };
 
 
-export const getSimilar = async (id) => {
-  const fetchResponse = await fetch(
+export const getSimilar = (id) => {
+  return fetch(
     `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}`
-  );
-  const res = await fetchResponse.json();
-  const json = res.similar;
-  return json;
+    )
+    .then((res) => res.json())
+    .then((json) => json.results);
 };
 
 
