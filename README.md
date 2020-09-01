@@ -85,7 +85,7 @@ popularity: 19.454
 
 ### Component catalogue.
 
- [For projects that expanded the Movies app, hi-light stories relating to new/modified components - see example screenshot below] .......
+ [For projects that expanded the Movies app, hi-light stories relating to new/modified components - ] .......
 
 ![][upcomingMovies]
 ![][similar]
@@ -97,7 +97,7 @@ popularity: 19.454
 >Shows detailed cast information on a movie. Clicking the 'Show Cast' button will display the full cast for the movie.
 
 ![][Show Similar]
->Shows detailed cast information on a movie. Clicking the 'Show Similar' button will display a list of titles similar to the selected movie.
+>Shows information for a list of movies similar to the one the user is looking at. Clicking the 'Show Similar' button will display this list.
 
 ### Routing.
 
