@@ -38,13 +38,18 @@ const SiteHeader = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-dark" to="/movies/upcoming">
-              Upcoming Movies  <span role="img" aria-label = "emoji"> 🎬</span>
+            <Link className="nav-link text-dark" to="/movies/now_playing">
+              Movies Out Now <span role="img" aria-label = "emoji"> 🎟</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link text-dark" to="/movies/top_rated">
               Top-rated Movies  <span role="img" aria-label = "emoji"> ⭐️</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-dark" to="/movies/upcoming">
+              Upcoming Movies  <span role="img" aria-label = "emoji"> 🎬</span>
             </Link>
           </li>
         </ul>
