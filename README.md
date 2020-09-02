@@ -77,11 +77,22 @@ popularity: 19.454
 
 ### UI Design.
 
+./credit.png
 ![][Show Cast]
 >Shows detailed cast information on a movie. Clicking the 'Show Cast' button will display the full cast for the movie.
 
+./similar.png
 ![][Show Similar]
 >Shows information for a list of movies similar to the one the user is looking at. Clicking the 'Show Similar' button will display this list.
+
+./toprated.png
+>List of movies with the highest points/votes
+
+./upcoming.png
+>List of movies coming out soon
+
+./outnow.png
+>List of movies out  now
 
 ### Routing.
 
