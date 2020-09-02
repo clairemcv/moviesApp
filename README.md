@@ -85,6 +85,8 @@ popularity: 19.454
 
 
 + /movies/upcoming - displays all upcoming movies
++ /movies/toprated - displays all top-rated movies
++ /movies/nowplaying - displays movies now on
 + /movies/:id/credits - detail view of the cast of a particular movie.
 + /movies/:id/similar - detail view of the cast of a particular movie.
 
