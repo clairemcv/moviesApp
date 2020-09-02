@@ -42,6 +42,11 @@ const SiteHeader = () => {
               Upcoming Movies  <span role="img" aria-label = "emoji"> 🎬</span>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link text-dark" to="/movies/top_rated">
+              Top-rated Movies  <span role="img" aria-label = "emoji"> ⭐️</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </nav>
