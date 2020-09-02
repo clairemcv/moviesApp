@@ -14,6 +14,8 @@ import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
 import UpcomingMovies from "../src/components/upcomingMovies";
+import TopratedMovies from "../src/components/topratedMovies";
+import NowplayingMovies from "../src/components/nowplayingMovies";
 
 const sample = {
   adult: false,
@@ -221,6 +223,44 @@ const similar = {
       release_date: "2020-08-22"
       };
 
+    const toprated = {
+      popularity: 19.644,
+      vote_count: 728,
+      video: false,
+      poster_path: "/pci1ArYW7oJ2eyTo2NMYEKHHiCP.jpg",
+      id: 724089,
+      adult: false,
+      backdrop_path: "/jtAI6OJIWLWiRItNSZoWjrsUtmi.jpg",
+      original_language: "en",
+      original_title: "Gabriel's Inferno Part II",
+      genre_ids: [
+        10749
+      ],
+      title: "Gabriel's Inferno Part II",
+      vote_average: 9.1,
+      overview: "Professor Gabriel Emerson finally learns the truth about Julia Mitchell's identity, but his realization comes a moment too late. Julia is done waiting for the well-respected Dante specialist to remember her and wants nothing more to do with him. Can Gabriel win back her heart before she finds love in another's arms?",
+      release_date: "2020-07-31"        
+      }
+
+    const nowplaying = {
+      popularity: 1520.857,
+      vote_count: 111,
+      video: false,
+      poster_path: "/uOw5JD8IlD546feZ6oxbIjvN66P.jpg",
+      id: 718444,
+      adult: false,
+      backdrop_path: "/x4UkhIQuHIJyeeOTdcbZ3t3gBSa.jpg",
+      original_language: "en",
+      original_title: "Rogue",
+      genre_ids: [
+        28
+      ],
+      title: "Rogue",
+      vote_average: 6,
+      overview: "Battle-hardened O’Hara leads a lively mercenary team of soldiers on a daring mission: rescue hostages from their captors in remote Africa. But as the mission goes awry and the team is stranded, O’Hara’s squad must face a bloody, brutal encounter with a gang of rebels.",
+      release_date: "2020-08-20"
+      }
+
 storiesOf("Home Page/MovieCard", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
@@ -269,6 +309,8 @@ storiesOf("Home Page/MovieList", module)
         credits={credits}
         similar={similar}
         upcoming={upcoming}
+        toprated={toprated}
+        nowplaying={nowplaying}
         action={movie => (
           <button className="btn w-100 btn-primary">Test</button>
         )}
@@ -290,6 +332,14 @@ storiesOf("Movie Details Page/MovieSimilar", module).add("default", () => (
 
 storiesOf("Movie Details Page/UpcomingMovies", module).add("default", () => (
   <UpcomingMovies movie={sample} />
+));
+
+storiesOf("Movie Details Page/TopratedMovies", module).add("default", () => (
+  <TopratedMovies movie={sample} />
+));
+
+storiesOf("Movie Details Page/NowplayingMovies", module).add("default", () => (
+  <NowplayingMovies movie={sample} />
 ));
 
 storiesOf("Movie Details Page/MovieHeader", module)

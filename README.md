@@ -8,6 +8,8 @@ To fulfill the good band objectives for the Movies App and aim for some excellen
 
  
  + Upcoming Movies
+ + Top-rated Movies
+ + Now playing Movies
  + Similar Movies - on Movie Details page
  + Cast credits for Movie - on Movie Details page
 
@@ -18,28 +20,6 @@ No non standard necessary - npm start
 
 Q. Specify the additional TMDB endpoints used and show sample responses, in JSON:
 
-Upcoming endpoint: https://api.themoviedb.org/3/movie/upcoming?api_key=afcb6bf3ef6b91fcf5cad6bfe725e104
-Sample below;
-results: [
-{
-popularity: 275.087,
-vote_count: 187,
-video: false,
-poster_path: "/k68nPLbIST6NP96JmTxmZijEvCA.jpg",
-id: 577922,
-adult: false,
-backdrop_path: "/wzJRB4MKi3yK138bJyuL9nx47y6.jpg",
-original_language: "en",
-original_title: "Tenet",
-genre_ids: [
-28,
-53
-],
-title: "Tenet",
-vote_average: 7.7,
-overview: "Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
-release_date: "2020-08-22"
-},
 
 Credits endpoint; https://api.themoviedb.org/3/movie/539885/credits?api_key=afcb6bf3ef6b91fcf5cad6bfe725e104
 
@@ -88,6 +68,8 @@ popularity: 19.454
  [For projects that expanded the Movies app, hi-light stories relating to new/modified components - ] .......
 
 ![][upcomingMovies]
+![][topratedMovies]
+![][nowplayingMovies]
 ![][similar]
 ![][credits]
 
